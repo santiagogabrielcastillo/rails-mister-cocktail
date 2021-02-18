@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="my-4 text-center">
+    <h1>All our cocktails</h1>
+  </div>
+
+  <div class="container d-flex align-items-center flex-column">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-product my-4 w-75">
+        <img src="<%= cocktail.image_url %>" />
+        <div class="card-product-infos">
+          <%= link_to cocktail.name, cocktail_path(cocktail), class: 'card-product-title' %>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  
+</div>
+
