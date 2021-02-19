@@ -1,17 +1,14 @@
 class ReviewsController < ApplicationController
   before_action :set_cocktail, only: %i[new create]
 
-  def new
-    @review = Review.new
-  end
-
   def create
+    @dose = Dose.new
     @review = Review.new(review_params)
     @review.cocktail = @cocktail
     if @review.save
       redirect_to cocktail_path(@cocktail)
     else
-      render :new
+      render 'cocktails/show'
     end
   end
 
