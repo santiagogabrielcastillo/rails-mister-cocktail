@@ -1,8 +1,22 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.image_url %>);">
-  <div class="container">
-    <h1><%= @cocktail.name %></h1>
+<% if @cocktail.photo.attached? %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @cocktail.photo.key, crop: :fill %>);">
+    <div class="container">
+      <h1><%= @cocktail.name %></h1>
+    </div>
   </div>
-</div>
+<% elsif @cocktail.image_url %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.image_url %>);">
+    <div class="container">
+      <h1><%= @cocktail.name %></h1>
+    </div>
+  </div>
+<% else %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://www.thecocktaildb.com/images/media/drink/ne7re71604179012.jpg');">
+    <div class="container">
+      <h1><%= @cocktail.name %></h1>
+    </div>
+  </div>
+<% end %>
 
 
 <div class="container mt-5">
@@ -44,8 +58,8 @@
       <h5>Reviews</h5>
       <ul class="reviews">
         <% @cocktail.reviews.each do |review| %>
-          <li>
-            <%= review.content %> <%= review.rating %> <i class="fa fa-star" aria-hidden="true"></i>
+          <li class="list-review">
+            <%= review.content %> <% (review.rating).to_i.times do %> <i class="fa fa-star" aria-hidden="true"></i> <% end %>
           </li>
         <% end %>
       </ul>

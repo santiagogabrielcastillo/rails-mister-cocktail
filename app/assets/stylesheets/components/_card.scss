@@ -23,8 +23,8 @@
 
   &:hover {
     text-decoration: none;
-    font-size: 40px;
-    color: black;
+    font-weight: bolder;
+    color: #112a7e;
   }
 }
 
@@ -39,4 +39,15 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.index-ingredients {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.index-ingredient {
+  font-size: 13px;
+  color:#252627;
 }
