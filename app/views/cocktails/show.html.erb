@@ -23,7 +23,7 @@
   <div class="row">
     <div class="col-12 col-lg-4">
       <div class="container">
-        <div class="card" style="width: 18rem;">
+        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
           <div class="card-body">
             <h3 class="card-title">List of ingredients <i class="fas fa-cocktail"></i></h3>
           </div>
@@ -42,12 +42,12 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-6 mt-4">
       <h1>Add a new ingredient</h1>
       <div>
         <%= simple_form_for [@cocktail, @dose] do |f| %>
-          <%= f.input :description %>
-          <%= f.association :ingredient, include_blank: false %>
+          <%= f.input :description, class: 'shadow p-3 mb-5 bg-body rounded'%>
+          <%= f.association :ingredient, include_blank: false, class: 'shadow p-3 mb-5 bg-body rounded' %>
           <%= f.button :submit, 'Add new ingredient', class: 'btn btn-primary'  %>
         <% end %>
       </div>
@@ -69,8 +69,8 @@
     <div class="col-12">
     <h3>Add review</h3>
       <%= simple_form_for [@cocktail, @review] do |f| %>
-        <%= f.input :content %>
-        <%= f.input :rating, collection: 0..5, include_blank: false %>
+        <%= f.input :content, class: 'shadow p-3 mb-5 bg-body rounded' %>
+        <%= f.input :rating, collection: 0..5, include_blank: false, class: 'shadow p-3 mb-5 bg-body rounded'%>
         <%= f.button :submit, 'Add review', class: 'btn btn-primary' %>
       <% end %>
     </div>

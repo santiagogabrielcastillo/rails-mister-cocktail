@@ -1,12 +1,12 @@
 <div class="container">
   <div class="my-4 text-center">
-    <h1>All our cocktails</h1>
+    <h1 class="big-title">All our cocktails</h1>
   </div>
 
   <div class="container d-flex align-items-center flex-column">
     <div class="row">
       <% @cocktails.each do |cocktail| %>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-lg-6">
           <div class="card-product m-4">
             <img src="<%= cocktail.image_url %>" />
             <div class="card-product-infos w-100">

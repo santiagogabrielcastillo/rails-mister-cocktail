@@ -4,9 +4,9 @@
       <h1>Create new cocktail</h1>
       <div class="w-100 mt-4">
         <%= simple_form_for @cocktail do |f| %>
-          <%= f.input :name %>
-          <%= f.input :photo, as: :file %>
-          <%= f.input :image_url, label: 'Or copy an image URL'%>
+          <%= f.input :name, class: 'shadow p-3 mb-5 bg-body rounded' %>
+          <%= f.input :photo, as: :file, class: 'shadow p-3 mb-5 bg-body rounded' %>
+          <%= f.input :image_url, label: 'Or copy an image URL', class: 'shadow p-3 mb-5 bg-body rounded' %>
           <%= f.button :submit, class: 'btn btn-primary mt-4' %>
         <% end %>
       </div>
